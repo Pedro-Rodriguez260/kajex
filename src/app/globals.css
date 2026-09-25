@@ -1,16 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #05070d;
-  --background-elevated: #0b1120;
-  --background-panel: #0e1526;
-  --foreground: #f4f7fb;
+  --background: #07090e;
+  --background-elevated: #0d121d;
+  --background-panel: #121826;
+  --foreground: #f8fafc;
   --foreground-muted: #94a3b8;
-  --border-subtle: #1c2740;
-  --primary: #2f6bff;
-  --primary-bright: #4f8bff;
-  --accent: #22d3ee;
-  --accent-soft: #38bdf8;
+  --border-subtle: #1e293b;
+
+  --pos-primary: #3b82f6;
+  --pos-accent: #06b6d4;
+  --it-primary: #10b981;
+  --it-accent: #34d399;
+  --licencias-primary: #8b5cf6;
+  --licencias-accent: #c084fc;
 }
 
 @theme inline {
@@ -20,69 +23,114 @@
   --color-foreground: var(--foreground);
   --color-foreground-muted: var(--foreground-muted);
   --color-border-subtle: var(--border-subtle);
-  --color-primary: var(--primary);
-  --color-primary-bright: var(--primary-bright);
-  --color-accent: var(--accent);
-  --color-accent-soft: var(--accent-soft);
+
+  --color-pos: var(--pos-primary);
+  --color-pos-accent: var(--pos-accent);
+  --color-it: var(--it-primary);
+  --color-it-accent: var(--it-accent);
+  --color-licencias: var(--licencias-primary);
+  --color-licencias-accent: var(--licencias-accent);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
 }
 
 ::selection {
-  background: var(--accent);
-  color: #05070d;
+  background: rgba(59, 130, 246, 0.3);
+  color: #ffffff;
 }
 
-.text-gradient {
-  background: linear-gradient(90deg, var(--accent) 0%, var(--primary-bright) 60%, var(--primary) 100%);
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #07090e;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Gradiantes de texto personalizados */
+.text-gradient-hub {
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-.glow-border {
-  position: relative;
+.text-gradient-pos {
+  background: linear-gradient(135deg, #60a5fa 0%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-.glow-border::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, var(--accent), var(--primary), transparent 70%);
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
+.text-gradient-it {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-.grid-overlay {
-  background-image:
-    linear-gradient(to right, rgba(148, 163, 184, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
-  background-size: 48px 48px;
+.text-gradient-licencias {
+  background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Tarjetas glassmorphism con brillo */
+.glass-card {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.glow-pos {
+  box-shadow: 0 0 40px -10px rgba(59, 130, 246, 0.25);
+}
+
+.glow-it {
+  box-shadow: 0 0 40px -10px rgba(16, 185, 129, 0.25);
+}
+
+.glow-licencias {
+  box-shadow: 0 0 40px -10px rgba(139, 92, 246, 0.25);
+}
+
+/* Grid de fondo sutil */
+.grid-pattern {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-14px); }
+  50% { transform: translateY(-10px); }
 }
 
 .animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
+  animation: float 5s ease-in-out infinite;
 }
