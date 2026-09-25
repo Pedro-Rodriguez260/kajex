@@ -166,7 +166,7 @@ export function SpeedComparator() {
         </div>
 
         <a
-          href="https://wa.me/573000000000?text=Hola%20KAJEX%20IT,%20deseo%20repotenciar%20mi%20computador%20con%20SSD%20y%20RAM."
+          href="https://wa.me/573144802437?text=Hola%20KAJEX%20IT,%20deseo%20repotenciar%20mi%20computador%20con%20SSD%20y%20RAM."
           target="_blank"
           rel="noopener noreferrer"
           className="px-6 py-3 rounded-xl text-xs font-extrabold text-white bg-emerald-600 hover:bg-emerald-500 flex items-center gap-2 shadow-lg shadow-emerald-600/30 transition-all shrink-0"

@@ -27,7 +27,7 @@ El formulario de "Solicitar demo" envía un correo por Gmail SMTP. Copia
 - `GMAIL_APP_PASSWORD` — una [contraseña de aplicación](https://myaccount.google.com/apppasswords)
   de esa cuenta (requiere verificación en dos pasos activada).
 - `DEMO_RECIPIENT_EMAIL` — a quién le llega la solicitud (por defecto
-  `soporteit@gmail.com`).
+  `Ayuda.grupoit@gmail.com`).
 
 Configura las mismas variables en Vercel (**Settings → Environment
 Variables**) antes de desplegar, o el formulario mostrará un error de "envío

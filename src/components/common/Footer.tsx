@@ -1,7 +1,15 @@
 import Link from "next/link";
 import { ShoppingBag, Wrench, Sparkles, Home, Phone, Mail, MapPin } from "lucide-react";
 
-export function Footer() {
+interface FooterProps {
+  whatsappNumber?: string;
+  whatsappFormatted?: string;
+}
+
+export function Footer({
+  whatsappNumber = "573144802437",
+  whatsappFormatted = "+57 314 480 2437",
+}: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -31,7 +39,7 @@ export function Footer() {
                 Soporte Activo
               </span>
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-900 border border-slate-800">
-                Cloudflare DNS • Vercel Hosted
+                Envíos a todo el país
               </span>
             </div>
           </div>
@@ -48,7 +56,7 @@ export function Footer() {
                   className="flex items-center gap-2 hover:text-cyan-400 transition-colors"
                 >
                   <Home className="w-4 h-4 text-cyan-400" />
-                  Hub Central (kajexpos.com)
+                  Inicio (kajexpos.com)
                 </Link>
               </li>
               <li>
@@ -105,21 +113,21 @@ export function Footer() {
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-emerald-400" />
                 <a
-                  href="https://wa.me/573000000000"
+                  href={`https://wa.me/${whatsappNumber}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                 >
-                  WhatsApp: +57 300 000 0000
+                  WhatsApp: {whatsappFormatted}
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-cyan-400" />
                 <a
-                  href="mailto:contacto@kajexpos.com"
+                  href="mailto:Ayuda.grupoit@gmail.com"
                   className="hover:text-white transition-colors"
                 >
-                  contacto@kajexpos.com
+                  Ayuda.grupoit@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-2.5">

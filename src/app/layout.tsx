@@ -13,9 +13,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kajex | Sistema POS moderno para tu negocio",
+  title: {
+    default: "Kajex | Sistemas POS, servicio técnico y licencias digitales",
+    template: "%s | Kajex",
+  },
   description:
-    "Kajex es el sistema POS todo-en-uno para vender, facturar y controlar tu inventario desde un solo lugar. Rápido, intuitivo y hecho para crecer con tu negocio.",
+    "Sistemas punto de venta (POS), mantenimiento y repotenciación de computadores, y licencias digitales oficiales. Atención por WhatsApp y envíos a todo el país.",
   icons: {
     icon: "/kajex-logo.png",
   },

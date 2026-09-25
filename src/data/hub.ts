@@ -78,7 +78,7 @@ export const hubData: HubData = {
       features: [
         "Mantenimiento preventivo y correctivo",
         "Repotenciación a SSD y memoria RAM",
-        "Limpieza profunda y cambio de pasta térmica",
+        "Limpieza interna y externa con isopropílico",
         "Diagnóstico rápido y garantía directa",
       ],
       ctaText: "Ver Servicios IT",
@@ -128,9 +128,9 @@ export const hubData: HubData = {
     ],
   },
   contact: {
-    whatsappNumber: "573000000000",
-    whatsappFormatted: "+57 300 000 0000",
-    email: "contacto@kajexpos.com",
+    whatsappNumber: "573144802437",
+    whatsappFormatted: "+57 314 480 2437",
+    email: "Ayuda.grupoit@gmail.com",
     location: "Atención Nacional y Envíos a Todo el País",
     schedule: "Lunes a Sábado: 8:00 AM - 7:00 PM",
   },

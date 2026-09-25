@@ -36,12 +36,12 @@ export function Navbar({ currentSection = "hub" }: NavbarProps) {
       case "licencias":
         return "Licencias";
       default:
-        return "HUB CENTRAL";
+        return "";
     }
   };
 
   const navLinks = [
-    { name: "Hub Central", href: "/", icon: Home, section: "hub" },
+    { name: "Inicio", href: "/", icon: Home, section: "hub" },
     { name: "Kajex POS", href: "/pos", icon: ShoppingBag, section: "pos" },
     { name: "Kajex IT", href: "/it", icon: Wrench, section: "it" },
     { name: "Kajex Licencias", href: "/licencias", icon: Sparkles, section: "licencias" },
@@ -62,11 +62,13 @@ export function Navbar({ currentSection = "hub" }: NavbarProps) {
               <span className="font-black text-xl tracking-wider text-white group-hover:text-slate-200 transition-colors">
                 KAJEX
               </span>
-              <span
-                className={`text-[10px] font-bold px-2 py-0.5 rounded-full border uppercase tracking-wider ${getAccentColor()}`}
-              >
-                {getBadgeText()}
-              </span>
+              {currentSection !== "hub" && (
+                <span
+                  className={`text-[10px] font-bold px-2 py-0.5 rounded-full border uppercase tracking-wider ${getAccentColor()}`}
+                >
+                  {getBadgeText()}
+                </span>
+              )}
             </div>
             <span className="text-[11px] text-slate-400 font-medium tracking-wide">
               kajexpos.com
@@ -106,11 +108,11 @@ export function Navbar({ currentSection = "hub" }: NavbarProps) {
               className="flex items-center gap-2 px-4 py-2 text-xs font-bold text-slate-300 hover:text-white bg-slate-900 hover:bg-slate-800 border border-slate-700/60 hover:border-slate-600 rounded-xl transition-all shadow-sm"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
-              Volver al Hub
+              Volver al Inicio
             </Link>
           ) : (
             <a
-              href="https://wa.me/573000000000?text=Hola%20KAJEX,%20quisiera%20información%20general."
+              href="https://wa.me/573144802437?text=Hola%20KAJEX,%20quisiera%20información%20general."
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 text-xs font-bold text-slate-900 bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 rounded-xl transition-all shadow-md shadow-cyan-500/20"
@@ -174,7 +176,7 @@ export function Navbar({ currentSection = "hub" }: NavbarProps) {
                   className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-bold text-slate-200 bg-slate-900 border border-slate-700"
                 >
                   <ArrowLeft className="w-4 h-4" />
-                  Volver al Hub Central
+                  Volver al Inicio
                 </Link>
               </div>
             )}

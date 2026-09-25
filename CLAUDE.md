@@ -60,7 +60,7 @@ surface via `npm run build` or editor diagnostics.
   library).
 - `src/components/DemoForm.tsx` (nombre, tienda, WhatsApp, correo opcional)
   POSTs to `src/app/api/demo/route.ts`, which emails the lead via Gmail SMTP
-  (nodemailer) to `DEMO_RECIPIENT_EMAIL` (defaults to `soporteit@gmail.com`).
+  (nodemailer) to `DEMO_RECIPIENT_EMAIL` (defaults to `Ayuda.grupoit@gmail.com`).
   Requires `GMAIL_USER` and `GMAIL_APP_PASSWORD` env vars (see
   `.env.example`) — without them the route returns a 500 with a Spanish
   error message instead of throwing. `CTA.tsx` is where the form is

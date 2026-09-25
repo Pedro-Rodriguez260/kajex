@@ -73,7 +73,7 @@ export default function KajexPosPage() {
     if (!formData.nombre || !formData.whatsapp) return;
 
     const message = `Hola KAJEX POS, mi nombre es ${formData.nombre} de la empresa/tienda ${formData.negocio || "N/A"}. Quisiera solicitar una cotización y demo del sistema POS. Mi WhatsApp es ${formData.whatsapp}.`;
-    window.open(`https://wa.me/573000000000?text=${encodeURIComponent(message)}`, "_blank");
+    window.open(`https://wa.me/573144802437?text=${encodeURIComponent(message)}`, "_blank");
     setFormSubmitted(true);
   };
 
@@ -265,7 +265,7 @@ export default function KajexPosPage() {
                     </div>
 
                     <a
-                      href={`https://wa.me/573000000000?text=Hola%20KAJEX%20POS,%20me%20interesa%20cotizar:%20${encodeURIComponent(product.name)}`}
+                      href={`https://wa.me/573144802437?text=Hola%20KAJEX%20POS,%20me%20interesa%20cotizar:%20${encodeURIComponent(product.name)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full py-3 rounded-xl font-bold text-xs text-white bg-blue-600 hover:bg-blue-500 flex items-center justify-center gap-2 transition-all shadow-md"
@@ -339,7 +339,7 @@ export default function KajexPosPage() {
                     </div>
 
                     <a
-                      href={`https://wa.me/573000000000?text=Hola%20KAJEX%20POS,%20deseo%20cotizar:%20${encodeURIComponent(plan.name)}`}
+                      href={`https://wa.me/573144802437?text=Hola%20KAJEX%20POS,%20deseo%20cotizar:%20${encodeURIComponent(plan.name)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`w-full py-3.5 rounded-xl font-extrabold text-xs text-center transition-all ${

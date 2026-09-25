@@ -11,7 +11,7 @@ interface WhatsAppFloatingProps {
 
 export function WhatsAppFloating({
   message = "Hola KAJEX, deseo solicitar información sobre sus servicios.",
-  phoneNumber = "573000000000",
+  phoneNumber = "573144802437",
   accent = "hub",
 }: WhatsAppFloatingProps) {
   const [hovered, setHovered] = useState(false);

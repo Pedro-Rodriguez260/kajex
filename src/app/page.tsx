@@ -274,13 +274,25 @@ export default function HubHomePage() {
                   </p>
 
                   <div className="mt-6 space-y-3">
-                    <div className="flex items-center gap-3 text-sm text-slate-300">
+                    <a
+                      href={`https://wa.me/${hubData.contact.whatsappNumber}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 text-sm text-slate-300 hover:text-white transition-colors"
+                    >
                       <Phone className="w-5 h-5 text-emerald-400" />
                       <span>{hubData.contact.whatsappFormatted}</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-sm text-slate-300">
+                    </a>
+                    <a
+                      href={`mailto:${hubData.contact.email}`}
+                      className="flex items-center gap-3 text-sm text-slate-300 hover:text-white transition-colors"
+                    >
                       <Mail className="w-5 h-5 text-cyan-400" />
                       <span>{hubData.contact.email}</span>
+                    </a>
+                    <div className="flex items-center gap-3 text-sm text-slate-300">
+                      <Clock className="w-5 h-5 text-amber-400" />
+                      <span>{hubData.contact.schedule}</span>
                     </div>
                     <div className="flex items-center gap-3 text-sm text-slate-300">
                       <MapPin className="w-5 h-5 text-violet-400" />

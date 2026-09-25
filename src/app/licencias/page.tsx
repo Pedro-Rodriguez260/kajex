@@ -205,7 +205,7 @@ export default function KajexLicenciasPage() {
                     </div>
 
                     <a
-                      href={`https://wa.me/573000000000?text=${encodeURIComponent(licenciasData.whatsappBaseMessage)}%20${encodeURIComponent(lic.name)}%20(${lic.duration})`}
+                      href={`https://wa.me/573222754259?text=${encodeURIComponent(licenciasData.whatsappBaseMessage)}%20${encodeURIComponent(lic.name)}%20(${lic.duration})`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full py-3.5 rounded-xl font-extrabold text-xs text-white bg-violet-600 hover:bg-violet-500 flex items-center justify-center gap-2 transition-all shadow-md"
@@ -295,9 +295,10 @@ export default function KajexLicenciasPage() {
 
       <WhatsAppFloating
         accent="licencias"
+        phoneNumber="573222754259"
         message="Hola KAJEX Licencias, quisiera información sobre el catálogo de licencias digitales."
       />
-      <Footer />
+      <Footer whatsappNumber="573222754259" whatsappFormatted="+57 322 275 4259" />
     </div>
   );
 }

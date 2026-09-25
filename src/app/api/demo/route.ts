@@ -24,7 +24,7 @@ export async function POST(request: Request) {
 
   const gmailUser = process.env.GMAIL_USER;
   const gmailPass = process.env.GMAIL_APP_PASSWORD;
-  const recipient = process.env.DEMO_RECIPIENT_EMAIL || "soporteit@gmail.com";
+  const recipient = process.env.DEMO_RECIPIENT_EMAIL || "Ayuda.grupoit@gmail.com";
 
   if (!gmailUser || !gmailPass) {
     console.error(

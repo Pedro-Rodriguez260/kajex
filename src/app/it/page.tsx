@@ -51,7 +51,7 @@ export default function KajexItPage() {
     if (!formData.nombre || !formData.whatsapp) return;
 
     const message = `Hola KAJEX IT, mi nombre es ${formData.nombre}. Requiero servicio técnico para un equipo tipo ${formData.equipo}. Problema/Detalle: ${formData.falla || "Mantenimiento / Repotenciación"}. Mi contacto es ${formData.whatsapp}.`;
-    window.open(`https://wa.me/573000000000?text=${encodeURIComponent(message)}`, "_blank");
+    window.open(`https://wa.me/573144802437?text=${encodeURIComponent(message)}`, "_blank");
     setFormSubmitted(true);
   };
 
@@ -81,7 +81,7 @@ export default function KajexItPage() {
 
             <Reveal delay={0.2}>
               <p className="mt-6 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-                Servicio técnico profesional sin sorpresas. Diagnóstico honesto, cambio a discos SSD de alta velocidad, aumento de RAM y limpieza profunda con pasta térmica de calidad.
+                Servicio técnico profesional sin sorpresas. Diagnóstico honesto, cambio a discos SSD de alta velocidad, aumento de RAM y mantenimiento con limpieza interna y externa de tu equipo.
               </p>
             </Reveal>
 
@@ -169,7 +169,7 @@ export default function KajexItPage() {
                     </div>
 
                     <a
-                      href={`https://wa.me/573000000000?text=Hola%20KAJEX%20IT,%20deseo%20consultar%20sobre:%20${encodeURIComponent(service.title)}`}
+                      href={`https://wa.me/573144802437?text=Hola%20KAJEX%20IT,%20deseo%20consultar%20sobre:%20${encodeURIComponent(service.title)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full py-3.5 rounded-xl font-extrabold text-xs text-white bg-emerald-600 hover:bg-emerald-500 flex items-center justify-center gap-2 transition-all shadow-md"
