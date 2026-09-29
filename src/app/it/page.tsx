@@ -36,13 +36,13 @@ export default function KajexItPage() {
   const getServiceIcon = (iconName: string) => {
     switch (iconName) {
       case "Cpu":
-        return <Cpu className="w-7 h-7 text-emerald-400" />;
+        return <Cpu className="w-7 h-7 text-emerald-600" />;
       case "Zap":
-        return <Zap className="w-7 h-7 text-emerald-400" />;
+        return <Zap className="w-7 h-7 text-emerald-600" />;
       case "Server":
-        return <Server className="w-7 h-7 text-emerald-400" />;
+        return <Server className="w-7 h-7 text-emerald-600" />;
       default:
-        return <Wrench className="w-7 h-7 text-emerald-400" />;
+        return <Wrench className="w-7 h-7 text-emerald-600" />;
     }
   };
 
@@ -56,31 +56,31 @@ export default function KajexItPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#060c09] text-slate-100 grid-pattern">
+    <div className="min-h-screen flex flex-col bg-white text-slate-900 grid-pattern">
       <Navbar currentSection="it" />
 
       <main className="flex-1">
         {/* HERO SECTION */}
-        <section className="relative pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden">
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[300px] bg-gradient-to-r from-emerald-600/30 via-teal-500/20 to-emerald-400/20 blur-[130px] pointer-events-none rounded-full" />
+        <section className="relative pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden bg-gradient-to-b from-emerald-50/60 via-teal-50/30 to-white">
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[300px] bg-gradient-to-r from-emerald-400/20 via-teal-400/20 to-emerald-300/15 blur-[130px] pointer-events-none rounded-full" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <Reveal direction="down">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-950/80 border border-emerald-800/60 text-xs font-extrabold text-emerald-300 shadow-xl mb-6">
-                <Wrench className="w-4 h-4 text-emerald-400" />
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-emerald-200 text-xs font-extrabold text-emerald-700 shadow-md mb-6">
+                <Wrench className="w-4 h-4 text-emerald-600" />
                 {itData.heroBadge}
               </span>
             </Reveal>
 
             <Reveal delay={0.1}>
-              <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-white max-w-4xl mx-auto leading-tight">
+              <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-slate-900 max-w-4xl mx-auto leading-tight">
                 ¿Tu Portátil Tarda en Encender? Le Ponemos SSD y{" "}
                 <span className="text-gradient-it">Vuela Hoy Mismo</span>
               </h1>
             </Reveal>
 
             <Reveal delay={0.2}>
-              <p className="mt-6 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+              <p className="mt-6 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
                 Servicio técnico profesional sin sorpresas. Diagnóstico honesto, cambio a discos SSD de alta velocidad, aumento de RAM y mantenimiento con limpieza interna y externa de tu equipo.
               </p>
             </Reveal>
@@ -89,14 +89,14 @@ export default function KajexItPage() {
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
                   href="#comparador"
-                  className="w-full sm:w-auto px-8 py-4 rounded-xl font-extrabold text-sm text-white bg-emerald-600 hover:bg-emerald-500 shadow-lg shadow-emerald-600/30 transition-all flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-8 py-4 rounded-xl font-extrabold text-sm text-white bg-emerald-600 hover:bg-emerald-700 shadow-lg shadow-emerald-600/30 transition-all flex items-center justify-center gap-2"
                 >
                   Probar Comparador de Velocidad
                   <Zap className="w-4 h-4" />
                 </a>
                 <a
                   href="#agendar"
-                  className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-sm text-slate-300 bg-slate-900 hover:bg-slate-800 border border-slate-800 transition-all"
+                  className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-sm text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-300 transition-all"
                 >
                   Agendar Diagnóstico Técnico
                 </a>
@@ -106,7 +106,7 @@ export default function KajexItPage() {
         </section>
 
         {/* COMPARADOR DE RENDIMIENTO INTERACTIVO */}
-        <section id="comparador" className="py-16 bg-slate-950/90 border-y border-slate-800/80">
+        <section id="comparador" className="py-16 bg-slate-50 border-y border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Reveal delay={0.15}>
               <SpeedComparator />
@@ -115,14 +115,14 @@ export default function KajexItPage() {
         </section>
 
         {/* SERVICIOS TÉCNICOS & PRECIOS DESDE $ */}
-        <section id="servicios" className="py-20">
+        <section id="servicios" className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-16">
               <Reveal>
-                <h2 className="text-xs font-bold text-emerald-400 uppercase tracking-widest">
+                <h2 className="text-xs font-bold text-emerald-600 uppercase tracking-widest">
                   Servicios Especializados
                 </h2>
-                <p className="text-3xl font-black text-white mt-2">
+                <p className="text-3xl font-black text-slate-900 mt-2">
                   Soluciones Técnicas con Garantía Transparente
                 </p>
               </Reveal>
@@ -131,37 +131,37 @@ export default function KajexItPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {itData.services.map((service, idx) => (
                 <Reveal key={service.id} delay={idx * 0.1}>
-                  <div className="glass-card rounded-3xl p-8 border border-slate-800 hover:border-emerald-500/50 transition-all flex flex-col justify-between h-full glow-it">
+                  <div className="bg-white rounded-3xl p-8 border border-slate-200/90 hover:border-emerald-500 hover:shadow-xl hover:shadow-emerald-600/10 transition-all flex flex-col justify-between h-full shadow-md">
                     <div>
                       <div className="flex items-center justify-between mb-4">
-                        <div className="p-3 rounded-2xl bg-emerald-950/70 border border-emerald-800/60">
+                        <div className="p-3 rounded-2xl bg-emerald-50 border border-emerald-100">
                           {getServiceIcon(service.icon)}
                         </div>
                         {service.badge && (
-                          <span className="text-[11px] font-bold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                          <span className="text-[11px] font-bold px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
                             {service.badge}
                           </span>
                         )}
                       </div>
 
-                      <h3 className="text-2xl font-bold text-white mb-1">
+                      <h3 className="text-2xl font-bold text-slate-900 mb-1">
                         {service.title}
                       </h3>
-                      <div className="text-lg font-black text-emerald-400 mb-3">
+                      <div className="text-lg font-black text-emerald-600 mb-3">
                         {service.startingPrice}
                       </div>
 
-                      <p className="text-xs text-slate-300 leading-relaxed mb-6">
+                      <p className="text-xs text-slate-600 leading-relaxed mb-6">
                         {service.description}
                       </p>
 
-                      <ul className="space-y-2.5 mb-8 border-t border-slate-800/80 pt-4">
+                      <ul className="space-y-2.5 mb-8 border-t border-slate-100 pt-4">
                         {service.includes.map((inc, i) => (
                           <li
                             key={i}
-                            className="flex items-center gap-2.5 text-xs text-slate-300"
+                            className="flex items-center gap-2.5 text-xs text-slate-600"
                           >
-                            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                            <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                             <span>{inc}</span>
                           </li>
                         ))}
@@ -172,7 +172,7 @@ export default function KajexItPage() {
                       href={`https://wa.me/573144802437?text=Hola%20KAJEX%20IT,%20deseo%20consultar%20sobre:%20${encodeURIComponent(service.title)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full py-3.5 rounded-xl font-extrabold text-xs text-white bg-emerald-600 hover:bg-emerald-500 flex items-center justify-center gap-2 transition-all shadow-md"
+                      className="w-full py-3.5 rounded-xl font-extrabold text-xs text-white bg-emerald-600 hover:bg-emerald-700 flex items-center justify-center gap-2 transition-all shadow-md shadow-emerald-600/20"
                     >
                       Consultar {service.title}
                       <ArrowRight className="w-4 h-4" />
@@ -185,14 +185,14 @@ export default function KajexItPage() {
         </section>
 
         {/* PROCESO DE TRABAJO (PASO A PASO) */}
-        <section className="py-20 bg-slate-950/80 border-t border-slate-800/80">
+        <section className="py-20 bg-slate-50/80 border-t border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-16">
               <Reveal>
-                <h2 className="text-xs font-bold text-emerald-400 uppercase tracking-widest">
+                <h2 className="text-xs font-bold text-emerald-600 uppercase tracking-widest">
                   Transparencia Total
                 </h2>
-                <p className="text-3xl font-black text-white mt-2">
+                <p className="text-3xl font-black text-slate-900 mt-2">
                   Nuestro Proceso de Trabajo en 4 Pasos
                 </p>
               </Reveal>
@@ -201,15 +201,15 @@ export default function KajexItPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {itData.steps.map((step, idx) => (
                 <Reveal key={idx} delay={idx * 0.1}>
-                  <div className="glass-card p-6 rounded-2xl border border-slate-800/80 relative flex flex-col justify-between h-full">
+                  <div className="bg-white p-6 rounded-2xl border border-slate-200/90 relative flex flex-col justify-between h-full shadow-sm hover:border-emerald-400 transition-all">
                     <div>
-                      <span className="text-4xl font-black text-emerald-500/30 block mb-3">
+                      <span className="text-4xl font-black text-emerald-600/20 block mb-3">
                         {step.number}
                       </span>
-                      <h3 className="text-lg font-bold text-white mb-2">
+                      <h3 className="text-lg font-bold text-slate-900 mb-2">
                         {step.title}
                       </h3>
-                      <p className="text-xs text-slate-400 leading-relaxed">
+                      <p className="text-xs text-slate-600 leading-relaxed">
                         {step.description}
                       </p>
                     </div>
@@ -221,14 +221,14 @@ export default function KajexItPage() {
         </section>
 
         {/* TESTIMONIOS */}
-        <section className="py-20">
+        <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-16">
               <Reveal>
-                <h2 className="text-xs font-bold text-emerald-400 uppercase tracking-widest">
+                <h2 className="text-xs font-bold text-emerald-600 uppercase tracking-widest">
                   Opiniones Reales
                 </h2>
-                <p className="text-3xl font-black text-white mt-2">
+                <p className="text-3xl font-black text-slate-900 mt-2">
                   Lo que Dicen Nuestros Clientes
                 </p>
               </Reveal>
@@ -237,23 +237,23 @@ export default function KajexItPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {itData.testimonials.map((testi, idx) => (
                 <Reveal key={idx} delay={idx * 0.15}>
-                  <div className="glass-card p-8 rounded-3xl border border-slate-800 flex flex-col justify-between h-full">
+                  <div className="bg-slate-50/70 p-8 rounded-3xl border border-slate-200/90 flex flex-col justify-between h-full shadow-sm">
                     <div>
-                      <div className="flex items-center gap-1 text-amber-400 mb-4">
+                      <div className="flex items-center gap-1 text-amber-500 mb-4">
                         {[...Array(testi.rating)].map((_, i) => (
                           <Star key={i} className="w-4 h-4 fill-current" />
                         ))}
                       </div>
-                      <p className="text-xs text-slate-300 italic leading-relaxed mb-6">
+                      <p className="text-xs text-slate-600 italic leading-relaxed mb-6">
                         "{testi.comment}"
                       </p>
                     </div>
 
-                    <div className="border-t border-slate-800 pt-4">
-                      <div className="font-bold text-sm text-white">
+                    <div className="border-t border-slate-200 pt-4">
+                      <div className="font-bold text-sm text-slate-900">
                         {testi.name}
                       </div>
-                      <div className="text-xs text-emerald-400 font-medium">
+                      <div className="text-xs text-emerald-600 font-medium">
                         {testi.role}
                       </div>
                     </div>
@@ -265,10 +265,10 @@ export default function KajexItPage() {
         </section>
 
         {/* FORMULARIO AGENDAR SERVICIO */}
-        <section id="agendar" className="py-20 bg-slate-950 border-t border-slate-800/80">
+        <section id="agendar" className="py-20 bg-slate-900 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <Reveal>
-              <div className="glass-card p-8 sm:p-12 rounded-3xl border border-slate-800 relative overflow-hidden">
+              <div className="bg-slate-950 p-8 sm:p-12 rounded-3xl border border-slate-800 relative overflow-hidden shadow-2xl">
                 <div className="text-center max-w-xl mx-auto mb-8">
                   <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest">
                     Agendamiento Rápido
