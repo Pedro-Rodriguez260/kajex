@@ -1,9 +1,20 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "Kajex IT — Mantenimiento y repotenciación de computadores" },
+  title: { absolute: "Kajex IT Colombia — Mantenimiento y Repotenciación de Computadores" },
   description:
-    "Mantenimiento preventivo desde $80.000, cambio a disco SSD, ampliación de RAM y formateo con backup incluido. Agenda por WhatsApp.",
+    "Servicio técnico informático en Colombia: mantenimiento preventivo, cambio a discos SSD de alta velocidad, aumento de memoria RAM y formateo con respaldo de archivos.",
+  keywords: [
+    "Kajex IT Colombia",
+    "Mantenimiento de computadores Colombia",
+    "Repotenciación SSD Colombia",
+    "Cambio disco sólido portátil",
+    "Aumento de memoria RAM",
+    "Servicio técnico PC Colombia",
+  ],
+  alternates: {
+    canonical: "/it",
+  },
 };
 
 export default function Layout({ children }: LayoutProps<"/it">) {
