@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { PromoBanner } from "@/data/licencias";
@@ -34,7 +34,7 @@ export function PromoCarousel({
 
   const activeBanner = banners[currentIndex];
 
-  // Auto-advance slider every 6 seconds unless paused
+  // Auto-advance slider every 6 seconds unless paused or modal open
   useEffect(() => {
     if (isPaused || lightboxImage) return;
 
@@ -88,9 +88,16 @@ export function PromoCarousel({
             <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
               Ofertas Especiales en Licencias
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 mt-1 max-w-xl">
-              Cuentas personales y licencias originales con entrega inmediata en WhatsApp (
-              <span className="font-bold text-purple-700">322 275 4259</span>).
+            <p className="text-xs sm:text-sm text-slate-600 mt-1 max-w-2xl leading-relaxed">
+              Cuentas personales y licencias originales con entrega inmediata en WhatsApp{" "}
+              <a
+                href={`https://wa.me/${whatsappNumber}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 font-extrabold text-purple-700 bg-purple-50 hover:bg-purple-100 px-2.5 py-0.5 rounded-lg border border-purple-200 transition-colors whitespace-nowrap shadow-xs"
+              >
+                322 275 4259
+              </a>.
             </p>
           </div>
 
@@ -142,16 +149,16 @@ export function PromoCarousel({
               transition={{ duration: 0.35, ease: "easeInOut" }}
               className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10"
             >
-              {/* Left Column: Visual Flyer Poster */}
+              {/* Left Column: Visual Flyer Poster WITHOUT CROPPING (object-contain) */}
               <div className="lg:col-span-5 flex justify-center">
-                <div className="relative group max-w-xs sm:max-w-sm w-full rounded-2xl overflow-hidden shadow-2xl border border-purple-400/30 bg-slate-950">
-                  <div className="relative aspect-[3/4] w-full">
+                <div className="relative group max-w-xs sm:max-w-sm w-full h-[460px] sm:h-[520px] rounded-2xl overflow-hidden shadow-2xl border border-purple-400/30 bg-slate-950/90 flex items-center justify-center p-2">
+                  <div className="relative w-full h-full">
                     <Image
                       src={activeBanner.image}
                       alt={activeBanner.title}
                       fill
-                      sizes="(max-width: 768px) 100vw, 400px"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, 420px"
+                      className="object-contain rounded-xl group-hover:scale-[1.02] transition-transform duration-500"
                       priority
                     />
                   </div>
@@ -159,9 +166,9 @@ export function PromoCarousel({
                   {/* Overlay button to open full lightbox */}
                   <button
                     onClick={() => setLightboxImage(activeBanner.image)}
-                    className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-xs font-bold text-white backdrop-blur-xs"
+                    className="absolute inset-0 bg-slate-950/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-xs font-bold text-white backdrop-blur-xs cursor-pointer"
                   >
-                    <span className="px-4 py-2 rounded-xl bg-purple-600/90 flex items-center gap-1.5 shadow-lg">
+                    <span className="px-4 py-2 rounded-xl bg-purple-600/95 flex items-center gap-1.5 shadow-xl hover:bg-purple-500 transition-colors">
                       <ZoomIn className="w-4 h-4" />
                       Ampliar Afiche Oficial
                     </span>
@@ -227,7 +234,7 @@ export function PromoCarousel({
 
                   <button
                     onClick={() => setLightboxImage(activeBanner.image)}
-                    className="flex items-center justify-center gap-2 px-5 py-4 rounded-xl font-bold text-xs text-slate-200 bg-white/10 hover:bg-white/20 border border-white/15 transition-all"
+                    className="flex items-center justify-center gap-2 px-5 py-4 rounded-xl font-bold text-xs text-slate-200 bg-white/10 hover:bg-white/20 border border-white/15 transition-all cursor-pointer"
                   >
                     <ZoomIn className="w-4 h-4" />
                     Ver Afiche Completo
@@ -243,7 +250,7 @@ export function PromoCarousel({
               <button
                 key={b.id}
                 onClick={() => setCurrentIndex(idx)}
-                className={`transition-all rounded-full ${
+                className={`transition-all rounded-full cursor-pointer ${
                   currentIndex === idx
                     ? "w-8 h-2 bg-purple-400 shadow-md shadow-purple-500/50"
                     : "w-2 h-2 bg-white/30 hover:bg-white/60"
@@ -260,7 +267,7 @@ export function PromoCarousel({
             <button
               key={b.id}
               onClick={() => setCurrentIndex(idx)}
-              className={`p-2.5 rounded-2xl text-left transition-all border flex flex-col justify-between ${
+              className={`p-2.5 rounded-2xl text-left transition-all border flex flex-col justify-between cursor-pointer ${
                 currentIndex === idx
                   ? "bg-purple-600 text-white border-purple-500 shadow-md shadow-purple-600/30 scale-[1.02]"
                   : "bg-white text-slate-700 border-slate-200 hover:border-purple-300 hover:bg-purple-50/50"
@@ -291,30 +298,31 @@ export function PromoCarousel({
             onClick={() => setLightboxImage(null)}
           >
             <div
-              className="relative max-w-lg w-full max-h-[90vh] flex flex-col items-center bg-slate-900 rounded-2xl border border-slate-800 p-4 shadow-2xl"
+              className="relative max-w-lg w-full max-h-[92vh] flex flex-col items-center bg-slate-900 rounded-2xl border border-slate-800 p-4 shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={() => setLightboxImage(null)}
-                className="absolute top-3 right-3 p-2 rounded-full bg-slate-800 text-white hover:bg-red-600 transition-colors z-10"
+                className="absolute top-3 right-3 p-2 rounded-full bg-slate-800 text-white hover:bg-red-600 transition-colors z-10 cursor-pointer"
                 aria-label="Cerrar vista ampliada"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="relative w-full max-h-[75vh] aspect-[3/4] rounded-xl overflow-hidden">
+              <div className="relative w-full h-[76vh] rounded-xl overflow-hidden">
                 <Image
                   src={lightboxImage}
                   alt="Afiche promocional KAJEX"
                   fill
                   className="object-contain"
-                  sizes="(max-width: 768px) 100vw, 600px"
+                  sizes="(max-width: 768px) 100vw, 650px"
+                  priority
                 />
               </div>
 
-              <div className="mt-4 w-full flex items-center justify-between gap-3">
-                <span className="text-xs text-slate-300 font-medium">
-                  Atención directa WhatsApp: 322 275 4259
+              <div className="mt-4 w-full flex items-center justify-between gap-3 pt-2 border-t border-slate-800">
+                <span className="text-xs text-slate-300 font-medium whitespace-nowrap">
+                  WhatsApp: <strong className="text-emerald-400">322 275 4259</strong>
                 </span>
                 <a
                   href={`https://wa.me/${whatsappNumber}?text=Hola%20KAJEX%20Licencias,%20vi%20la%20publicidad%20oficial%20y%20deseo%20adquirir%20el%20servicio.`}

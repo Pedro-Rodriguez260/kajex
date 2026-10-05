@@ -10,6 +10,7 @@ export interface LicenseItem {
   description: string;
   features: string[];
   icon: string;
+  logo?: string;
   promoImage?: string;
 }
 
@@ -177,6 +178,7 @@ export const licenciasData: LicenciasData = {
         "Garantía y entrega inmediata",
       ],
       icon: "Sparkles",
+      logo: "/logos/platzi.svg",
       promoImage: "/publicidad/platzi.jpg",
     },
     {
@@ -197,6 +199,7 @@ export const licenciasData: LicenciasData = {
         "Soporte y activación inmediata",
       ],
       icon: "Cpu",
+      logo: "/logos/microsoft365.svg",
       promoImage: "/publicidad/office365.jpg",
     },
     {
@@ -217,6 +220,7 @@ export const licenciasData: LicenciasData = {
         "Plantillas y fotos premium ilimitadas",
       ],
       icon: "Sparkles",
+      logo: "/logos/canva.svg",
       promoImage: "/publicidad/canva.jpg",
     },
     {
@@ -236,6 +240,7 @@ export const licenciasData: LicenciasData = {
         "Aprende a tu propio ritmo con garantía",
       ],
       icon: "Sparkles",
+      logo: "/logos/coursera.svg",
       promoImage: "/publicidad/coursera.jpg",
     },
     {
@@ -255,6 +260,7 @@ export const licenciasData: LicenciasData = {
         "Activación en tu propia cuenta personal",
       ],
       icon: "Sparkles",
+      logo: "/logos/duolingo.svg",
       promoImage: "/publicidad/duolingo.jpg",
     },
     {
@@ -274,6 +280,7 @@ export const licenciasData: LicenciasData = {
         "Acceso en todos tus dispositivos",
       ],
       icon: "Cpu",
+      logo: "/logos/figma.svg",
       promoImage: "/publicidad/figma.jpg",
     },
     {
@@ -294,6 +301,7 @@ export const licenciasData: LicenciasData = {
         "Respuesta ultrarrápida y cero tiempos de espera",
       ],
       icon: "Bot",
+      logo: "/logos/chatgpt.svg",
     },
     {
       id: "midjourney-v6",
@@ -312,6 +320,7 @@ export const licenciasData: LicenciasData = {
         "Acceso vía servidor Discord exclusivo",
       ],
       icon: "Sparkles",
+      logo: "/logos/midjourney.svg",
     },
     {
       id: "claude-pro",
@@ -330,6 +339,7 @@ export const licenciasData: LicenciasData = {
         "Creación de artefactos y prototipos",
       ],
       icon: "Cpu",
+      logo: "/logos/claude.svg",
     },
     {
       id: "youtube-premium",
@@ -349,6 +359,7 @@ export const licenciasData: LicenciasData = {
         "Incluye YouTube Music ilimitado",
       ],
       icon: "Tv",
+      logo: "/logos/youtube.svg",
       promoImage: "/publicidad/youtube.jpg",
     },
     {
@@ -368,6 +379,7 @@ export const licenciasData: LicenciasData = {
         "Soporte directo ante cualquier duda",
       ],
       icon: "Tv",
+      logo: "/logos/netflix.svg",
     },
     {
       id: "disney-premium",
@@ -385,6 +397,7 @@ export const licenciasData: LicenciasData = {
         "Audio Dolby Atmos compatible",
       ],
       icon: "Tv",
+      logo: "/logos/disney.svg",
     },
     {
       id: "spotify-premium",
@@ -402,6 +415,7 @@ export const licenciasData: LicenciasData = {
         "Compatible con Alexa, Smart TV y celular",
       ],
       icon: "Tv",
+      logo: "/logos/spotify.svg",
     },
   ],
   buySteps: [

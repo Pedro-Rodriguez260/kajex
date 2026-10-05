@@ -48,20 +48,20 @@ export default function KajexLicenciasPage() {
           (lic) => lic.category === selectedCategory
         );
 
-  const getLicenseIcon = (iconName: string, category: string) => {
+  const getLicenseFallbackIcon = (category: string) => {
     switch (category) {
       case "Educación":
-        return <GraduationCap className="w-7 h-7 text-purple-600" />;
+        return <GraduationCap className="w-6 h-6 text-purple-600" />;
       case "Diseño":
-        return <Palette className="w-7 h-7 text-purple-600" />;
+        return <Palette className="w-6 h-6 text-purple-600" />;
       case "Inteligencia Artificial":
-        return <Bot className="w-7 h-7 text-purple-600" />;
+        return <Bot className="w-6 h-6 text-purple-600" />;
       case "Streaming":
-        return <Tv className="w-7 h-7 text-purple-600" />;
+        return <Tv className="w-6 h-6 text-purple-600" />;
       case "Productividad":
-        return <Cpu className="w-7 h-7 text-purple-600" />;
+        return <Cpu className="w-6 h-6 text-purple-600" />;
       default:
-        return <Sparkles className="w-7 h-7 text-purple-600" />;
+        return <Sparkles className="w-6 h-6 text-purple-600" />;
     }
   };
 
@@ -160,7 +160,7 @@ export default function KajexLicenciasPage() {
                   <button
                     key={cat}
                     onClick={() => setSelectedCategory(cat)}
-                    className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all border ${
+                    className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all border cursor-pointer ${
                       selectedCategory === cat
                         ? "bg-purple-600 text-white border-purple-600 shadow-md shadow-purple-600/25"
                         : "bg-white text-slate-600 border-slate-200 hover:text-slate-900 hover:border-slate-300"
@@ -175,13 +175,23 @@ export default function KajexLicenciasPage() {
             {/* License Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredLicenses.map((lic, idx) => (
-                <Reveal key={lic.id} delay={idx * 0.06}>
+                <Reveal key={lic.id} delay={idx * 0.05}>
                   <div className="bg-white rounded-3xl p-7 border border-slate-200/90 hover:border-purple-500 hover:shadow-xl hover:shadow-purple-600/10 transition-all flex flex-col justify-between h-full shadow-md glow-licencias">
                     <div>
-                      {/* Top Header */}
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="p-3 rounded-2xl bg-purple-50 border border-purple-100">
-                          {getLicenseIcon(lic.icon, lic.category)}
+                      {/* Top Header with Brand Logo */}
+                      <div className="flex items-center justify-between mb-5">
+                        <div className="relative w-13 h-13 rounded-2xl p-2 bg-slate-50 border border-slate-200/80 shadow-xs flex items-center justify-center overflow-hidden">
+                          {lic.logo ? (
+                            <Image
+                              src={lic.logo}
+                              alt={`Logo ${lic.name}`}
+                              width={44}
+                              height={44}
+                              className="w-full h-full object-contain"
+                            />
+                          ) : (
+                            getLicenseFallbackIcon(lic.category)
+                          )}
                         </div>
                         <div className="flex items-center gap-2">
                           <span className="text-[11px] font-extrabold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
@@ -222,7 +232,7 @@ export default function KajexLicenciasPage() {
                         <div className="mb-5">
                           <button
                             onClick={() => setPreviewImage(lic.promoImage!)}
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-purple-50 hover:bg-purple-100 text-purple-700 text-xs font-bold transition-colors border border-purple-200/60"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-purple-50 hover:bg-purple-100 text-purple-700 text-xs font-bold transition-colors border border-purple-200/60 cursor-pointer"
                           >
                             <ZoomIn className="w-3.5 h-3.5" />
                             Ver afiche publicitario oficial
@@ -332,7 +342,7 @@ export default function KajexLicenciasPage() {
         </section>
       </main>
 
-      {/* Lightbox Modal for flyer previews */}
+      {/* Lightbox Modal for flyer previews WITHOUT CLIPPING */}
       <AnimatePresence>
         {previewImage && (
           <motion.div
@@ -343,30 +353,31 @@ export default function KajexLicenciasPage() {
             onClick={() => setPreviewImage(null)}
           >
             <div
-              className="relative max-w-lg w-full max-h-[90vh] flex flex-col items-center bg-slate-900 rounded-2xl border border-slate-800 p-4 shadow-2xl"
+              className="relative max-w-lg w-full max-h-[92vh] flex flex-col items-center bg-slate-900 rounded-2xl border border-slate-800 p-4 shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={() => setPreviewImage(null)}
-                className="absolute top-3 right-3 p-2 rounded-full bg-slate-800 text-white hover:bg-red-600 transition-colors z-10"
+                className="absolute top-3 right-3 p-2 rounded-full bg-slate-800 text-white hover:bg-red-600 transition-colors z-10 cursor-pointer"
                 aria-label="Cerrar vista previa"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="relative w-full max-h-[75vh] aspect-[3/4] rounded-xl overflow-hidden">
+              <div className="relative w-full h-[76vh] rounded-xl overflow-hidden">
                 <Image
                   src={previewImage}
                   alt="Afiche oficial KAJEX"
                   fill
                   className="object-contain"
-                  sizes="(max-width: 768px) 100vw, 600px"
+                  sizes="(max-width: 768px) 100vw, 650px"
+                  priority
                 />
               </div>
 
-              <div className="mt-4 w-full flex items-center justify-between gap-3">
-                <span className="text-xs text-slate-300 font-medium">
-                  WhatsApp: 322 275 4259
+              <div className="mt-4 w-full flex items-center justify-between gap-3 pt-2 border-t border-slate-800">
+                <span className="text-xs text-slate-300 font-medium whitespace-nowrap">
+                  WhatsApp: <strong className="text-emerald-400">322 275 4259</strong>
                 </span>
                 <a
                   href="https://wa.me/573222754259?text=Hola%20KAJEX%20Licencias,%20vi%20la%20publicidad%20y%20quiero%20adquirir%20este%20servicio."
