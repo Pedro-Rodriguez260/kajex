@@ -34,10 +34,10 @@ export interface HubData {
 }
 
 export const hubData: HubData = {
-  brandName: "KAJEX Colombia",
+  brandName: "KAJEXPOS",
   slogan: "Soluciones Tecnológicas Integrales para Tu Crecimiento",
   heroDescription:
-    "Especialistas en Colombia en sistemas punto de venta (POS), mantenimiento y repotenciación computacional (IT), y licencias digitales oficiales de software, IA y streaming con envíos y cobertura a nivel nacional.",
+    "En KAJEXPOS (kajexpos.com) somos especialistas en Colombia en sistemas punto de venta (POS), mantenimiento informático profesional (IT) y licencias digitales oficiales con envíos y cobertura a nivel nacional.",
   stats: [
     { value: "+500", label: "Negocios en Colombia" },
     { value: "99.9%", label: "Garantía & Soporte" },
@@ -106,9 +106,9 @@ export const hubData: HubData = {
   aboutUs: {
     title: "Impulsamos Negocios y Profesionales en Colombia con Tecnología Confiable",
     description1:
-      "En KAJEX centralizamos la tecnología que tu negocio y tu vida profesional necesitan en Colombia. Desde la automatización comercial con sistemas POS rápidos y robustos, hasta el respaldo técnico informático para tus computadores y la provisión de las mejores herramientas de software, educación e inteligencia artificial.",
+      "En KAJEXPOS (kajexpos.com) centralizamos la tecnología que tu negocio y tu vida profesional necesitan en Colombia. Desde la automatización comercial con sistemas POS rápidos y robustos, hasta el respaldo técnico informático para tus computadores y la provisión de las mejores herramientas de software, educación e inteligencia artificial.",
     description2:
-      "Nos distingue la atención inmediata por WhatsApp, la calidad comprobada de nuestros productos y la transparencia total con precios en pesos colombianos (COP).",
+      "Nos distingue la atención inmediata por WhatsApp (322 275 4259), la calidad comprobada de nuestros productos y la transparencia total con precios en pesos colombianos (COP).",
     pillars: [
       {
         title: "Garantía en Colombia",

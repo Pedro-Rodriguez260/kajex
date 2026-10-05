@@ -15,15 +15,16 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.kajexpos.com"),
   title: {
-    default: "KAJEX Colombia | Sistemas POS, Soporte IT y Licencias Digitales",
-    template: "%s | KAJEX Colombia",
+    default: "KAJEXPOS Colombia | Sistemas POS, Soporte IT y Licencias Digitales",
+    template: "%s | KAJEXPOS Colombia",
   },
   description:
-    "KAJEX Colombia: Soluciones tecnológicas para negocios en Colombia. Sistemas y software punto de venta (POS), mantenimiento y repotenciación computacional (IT), y licencias oficiales. Atención y envíos a toda Colombia.",
+    "KAJEXPOS (https://www.kajexpos.com): Soluciones tecnológicas en Colombia. Sistemas y software punto de venta (POS), mantenimiento y repotenciación computacional (IT), y licencias oficiales. Atención y envíos a toda Colombia.",
   keywords: [
-    "KAJEX",
-    "KAJEX Colombia",
-    "Kajexpos",
+    "KAJEXPOS",
+    "kajexpos",
+    "kajexpos.com",
+    "KAJEXPOS Colombia",
     "Kajex POS",
     "Kajex IT",
     "Kajex Licencias",
@@ -40,9 +41,9 @@ export const metadata: Metadata = {
     "Microsoft 365 Colombia",
     "Canva Pro Colombia",
   ],
-  authors: [{ name: "KAJEX Colombia" }],
-  creator: "KAJEX Colombia",
-  publisher: "KAJEX Colombia",
+  authors: [{ name: "KAJEXPOS" }],
+  creator: "KAJEXPOS",
+  publisher: "KAJEXPOS",
   icons: {
     icon: [
       { url: "/icon.png", type: "image/png" },
@@ -57,23 +58,23 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: "/",
+    canonical: "https://www.kajexpos.com/",
     languages: {
-      "es-CO": "https://www.kajexpos.com",
+      "es-CO": "https://www.kajexpos.com/",
     },
   },
   openGraph: {
-    title: "KAJEX Colombia | Sistemas POS, Soporte IT y Licencias Digitales",
+    title: "KAJEXPOS Colombia | Sistemas POS, Soporte IT y Licencias Digitales",
     description:
-      "Potencia tu negocio en Colombia con KAJEX. Punto de venta ultrarrápido, repotenciación computacional y licencias digitales oficiales con garantía y entrega inmediata.",
-    url: "https://www.kajexpos.com",
-    siteName: "KAJEX Colombia",
+      "Potencia tu negocio en Colombia con KAJEXPOS (kajexpos.com). Punto de venta ultrarrápido, repotenciación computacional y licencias digitales oficiales con garantía y entrega inmediata.",
+    url: "https://www.kajexpos.com/",
+    siteName: "KAJEXPOS Colombia",
     images: [
       {
         url: "/logo2.png",
         width: 800,
         height: 600,
-        alt: "KAJEX Colombia Logo",
+        alt: "KAJEXPOS Logo",
       },
     ],
     locale: "es_CO",
@@ -81,9 +82,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "KAJEX Colombia | Ecosistema Tecnológico para tu Negocio",
+    title: "KAJEXPOS Colombia | Sistemas POS, IT y Licencias",
     description:
-      "Sistemas POS, mantenimiento de computadores y licencias digitales oficiales en Colombia.",
+      "KAJEXPOS: Sistemas POS, mantenimiento de computadores y licencias digitales oficiales en Colombia.",
     images: ["/logo2.png"],
   },
   robots: {
@@ -109,13 +110,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "Store", "ProfessionalService"],
-    name: "KAJEX Colombia",
-    alternateName: ["KAJEX", "Kajex POS", "Kajex IT", "Kajex Licencias", "kajexpos.com"],
-    url: "https://www.kajexpos.com",
+    name: "KAJEXPOS",
+    alternateName: ["KAJEXPOS Colombia", "Kajexpos", "kajexpos.com", "Kajex POS", "Kajex IT", "Kajex Licencias"],
+    url: "https://www.kajexpos.com/",
     logo: "https://www.kajexpos.com/logo2.png",
     image: "https://www.kajexpos.com/logo2.png",
     description:
-      "Empresa colombiana líder en soluciones tecnológicas: sistemas y software punto de venta (POS), servicio técnico computacional e instalación de licencias de software oficiales.",
+      "KAJEXPOS: Empresa colombiana líder en soluciones tecnológicas. Sistemas y software punto de venta (POS), servicio técnico computacional e instalación de licencias de software oficiales en Colombia.",
     telephone: "+573222754259",
     priceRange: "$$",
     currenciesAccepted: "COP",

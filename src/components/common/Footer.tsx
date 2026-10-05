@@ -21,7 +21,7 @@ export function Footer({
             <div className="flex items-center">
               <img
                 src="/logo2.png"
-                alt="KAJEX Logo"
+                alt="KAJEXPOS Logo"
                 className="h-12 w-auto object-contain brightness-0 invert"
               />
             </div>
@@ -137,7 +137,7 @@ export function Footer({
 
         {/* Bottom copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <p>© {currentYear} KAJEX. Todos los derechos reservados.</p>
+          <p>© {currentYear} KAJEXPOS (kajexpos.com). Todos los derechos reservados.</p>
           <div className="flex items-center gap-6">
             <Link href="/" className="hover:text-white transition-colors">
               Términos de Servicio

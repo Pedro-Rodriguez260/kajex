@@ -82,14 +82,14 @@ export default function HubHomePage() {
             <Reveal direction="down">
               <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/90 border border-blue-200 text-xs font-bold text-blue-700 shadow-md shadow-blue-600/10 mb-8">
                 <span className="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse" />
-                Ecosistema Tecnológico KAJEX Colombia
+                Ecosistema Tecnológico KAJEXPOS Colombia
               </div>
             </Reveal>
 
             <Reveal delay={0.1}>
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-slate-900 leading-none max-w-5xl mx-auto">
                 Potencia Tu Negocio y Vida Digital con{" "}
-                <span className="text-gradient-hub">KAJEX Colombia</span>
+                <span className="text-gradient-hub">KAJEXPOS</span>
               </h1>
             </Reveal>
 
